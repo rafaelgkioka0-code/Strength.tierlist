@@ -101,6 +101,17 @@ function handleDrop(e) {
     }
 }
 
+// Clear all players from all tiers
+function clearAllPlayers() {
+    if (confirm('Are you sure you want to remove all players from all tiers?')) {
+        document.querySelectorAll('.tier-items').forEach(tier => {
+            tier.innerHTML = '';
+        });
+        localStorage.removeItem('tierlist');
+        console.log('All players removed from tiers');
+    }
+}
+
 // Reset tierlist
 document.getElementById('resetBtn').addEventListener('click', () => {
     if (confirm('Are you sure you want to reset the tierlist?')) {
