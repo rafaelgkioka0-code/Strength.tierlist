@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #0066ff 100%);
+    background: linear-gradient(135deg, #000000 0%, #cc0000 100%);
     min-height: 100vh;
     padding: 20px;
     color: #333;
@@ -15,24 +15,24 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(20, 20, 30, 0.95);
+    background: rgba(20, 10, 10, 0.95);
     border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0, 102, 255, 0.5);
+    box-shadow: 0 10px 40px rgba(204, 0, 0, 0.5);
     padding: 30px;
 }
 
 header {
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 3px solid #0066ff;
+    border-bottom: 3px solid #cc0000;
     padding-bottom: 20px;
 }
 
 header h1 {
     font-size: 2.5em;
-    color: #0066ff;
+    color: #ff3333;
     margin-bottom: 10px;
-    text-shadow: 0 0 10px rgba(0, 102, 255, 0.8);
+    text-shadow: 0 0 10px rgba(204, 0, 0, 0.8);
 }
 
 header p {
@@ -50,33 +50,33 @@ header p {
 
 .btn {
     padding: 12px 25px;
-    background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+    background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
     color: white;
-    border: 2px solid #0099ff;
+    border: 2px solid #ff3333;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.5);
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, #0099ff 0%, #0066ff 100%);
-    box-shadow: 0 0 20px rgba(0, 102, 255, 0.8);
+    background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.8);
     transform: translateY(-2px);
 }
 
 .title-input {
     padding: 12px 15px;
-    border: 2px solid #0066ff;
+    border: 2px solid #cc0000;
     border-radius: 5px;
     font-size: 1em;
     width: 300px;
     max-width: 100%;
     background: rgba(255, 255, 255, 0.1);
     color: white;
-    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
 }
 
 .title-input::placeholder {
@@ -85,17 +85,17 @@ header p {
 
 .tierlist {
     margin-bottom: 40px;
-    border: 2px solid #0066ff;
+    border: 2px solid #cc0000;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
+    box-shadow: 0 0 15px rgba(204, 0, 0, 0.4);
 }
 
 .tier {
     display: flex;
-    border-bottom: 1px solid #0066ff;
+    border-bottom: 1px solid #cc0000;
     min-height: 100px;
-    background: rgba(0, 30, 60, 0.6);
+    background: rgba(30, 10, 10, 0.6);
 }
 
 .tier:last-child {
@@ -109,14 +109,14 @@ header p {
     justify-content: center;
     font-size: 2em;
     font-weight: bold;
-    background: linear-gradient(135deg, #000000 0%, #0066ff 100%);
-    color: #0099ff;
+    background: linear-gradient(135deg, #000000 0%, #cc0000 100%);
+    color: #ff3333;
     min-width: 80px;
-    text-shadow: 0 0 5px rgba(0, 102, 255, 0.8);
+    text-shadow: 0 0 5px rgba(204, 0, 0, 0.8);
 }
 
 .tier-label:nth-parent(1) {
-    background: linear-gradient(135deg, #000000 0%, #0066ff 100%);
+    background: linear-gradient(135deg, #000000 0%, #cc0000 100%);
 }
 
 .tier-items {
@@ -126,15 +126,15 @@ header p {
     align-content: flex-start;
     gap: 5px;
     padding: 10px;
-    background: rgba(0, 20, 40, 0.4);
+    background: rgba(20, 5, 5, 0.4);
     min-height: 100px;
 }
 
 .tier-item {
     width: 80px;
     height: 80px;
-    background: rgba(30, 30, 50, 0.8);
-    border: 2px solid #0066ff;
+    background: rgba(30, 10, 10, 0.8);
+    border: 2px solid #cc0000;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -144,13 +144,13 @@ header p {
     font-size: 2em;
     user-select: none;
     position: relative;
-    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
 }
 
 .tier-item:hover {
     transform: scale(1.05);
-    border-color: #0099ff;
-    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
+    border-color: #ff3333;
+    box-shadow: 0 0 15px rgba(204, 0, 0, 0.7);
 }
 
 .tier-item.dragging {
@@ -162,7 +162,7 @@ header p {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: #ff0055;
+    background: #ff3333;
     color: white;
     width: 24px;
     height: 24px;
@@ -175,7 +175,7 @@ header p {
     font-weight: bold;
     opacity: 0;
     transition: opacity 0.2s ease;
-    box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.6);
 }
 
 .tier-item:hover .close-btn {
@@ -185,13 +185,13 @@ header p {
 .items-pool {
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 2px solid #0066ff;
+    border-top: 2px solid #cc0000;
 }
 
 .items-pool h2 {
     margin-bottom: 20px;
-    color: #0099ff;
-    text-shadow: 0 0 10px rgba(0, 102, 255, 0.6);
+    color: #ff3333;
+    text-shadow: 0 0 10px rgba(204, 0, 0, 0.6);
 }
 
 .items-grid {
@@ -203,8 +203,8 @@ header p {
 .item {
     width: 100%;
     aspect-ratio: 1;
-    background: rgba(30, 30, 50, 0.8);
-    border: 2px solid #0066ff;
+    background: rgba(30, 10, 10, 0.8);
+    border: 2px solid #cc0000;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -212,13 +212,13 @@ header p {
     cursor: grab;
     font-size: 2.5em;
     transition: all 0.2s ease;
-    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
 }
 
 .item:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 102, 255, 0.7);
-    border-color: #0099ff;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.7);
+    border-color: #ff3333;
 }
 
 .item.dragging {
