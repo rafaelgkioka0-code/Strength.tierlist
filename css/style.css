@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #764ba2;
+}
+
+.title-input {
+    padding: 12px 15px;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 300px;
+    max-width: 100%;
+}
+
+.tierlist {
+    margin-bottom: 40px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tier {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    min-height: 100px;
+}
+
+.tier:last-child {
+    border-bottom: none;
+}
+
+.tier-label {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    min-width: 80px;
+}
+
+.tier-label:nth-parent(1) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.tier-items {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 5px;
+    padding: 10px;
+    background: #f9f9f9;
+    min-height: 100px;
+}
+
+.tier-item {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    transition: transform 0.2s ease;
+    font-size: 2em;
+    user-select: none;
+    position: relative;
+}
+
+.tier-item:hover {
+    transform: scale(1.05);
+    border-color: #667eea;
+}
+
+.tier-item.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.close-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #f5576c;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tier-item:hover .close-btn {
+    opacity: 1;
+}
+
+.items-pool {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #ddd;
+}
+
+.items-pool h2 {
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.item {
+    width: 100%;
+    aspect-ratio: 1;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    font-size: 2.5em;
+    transition: all 0.2s ease;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.item.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .title-input {
+        width: 100%;
+    }
+
+    .tier-label {
+        width: 60px;
+        font-size: 1.5em;
+    }
+
+    .tier-item {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5em;
+    }
+
+    .items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+
+    .item {
+        font-size: 2em;
+    }
+}

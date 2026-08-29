@@ -1,0 +1,204 @@
+{
+  "items": [
+    {
+      "name": "Diamond Pickaxe",
+      "emoji": "⛏️",
+      "category": "tools"
+    },
+    {
+      "name": "Iron Sword",
+      "emoji": "⚔️",
+      "category": "weapons"
+    },
+    {
+      "name": "Diamond Sword",
+      "emoji": "🗡️",
+      "category": "weapons"
+    },
+    {
+      "name": "Shield",
+      "emoji": "🛡️",
+      "category": "armor"
+    },
+    {
+      "name": "Bow",
+      "emoji": "🏹",
+      "category": "weapons"
+    },
+    {
+      "name": "Stone",
+      "emoji": "🪨",
+      "category": "blocks"
+    },
+    {
+      "name": "Wood",
+      "emoji": "🪵",
+      "category": "blocks"
+    },
+    {
+      "name": "Wheat",
+      "emoji": "🌾",
+      "category": "food"
+    },
+    {
+      "name": "Apple",
+      "emoji": "🍎",
+      "category": "food"
+    },
+    {
+      "name": "Raw Beef",
+      "emoji": "🥩",
+      "category": "food"
+    },
+    {
+      "name": "Diamond",
+      "emoji": "💎",
+      "category": "resources"
+    },
+    {
+      "name": "Redstone",
+      "emoji": "🔷",
+      "category": "resources"
+    },
+    {
+      "name": "Lapis Lazuli",
+      "emoji": "🟦",
+      "category": "resources"
+    },
+    {
+      "name": "Iron Ore",
+      "emoji": "🟧",
+      "category": "resources"
+    },
+    {
+      "name": "Obsidian",
+      "emoji": "⬛",
+      "category": "blocks"
+    },
+    {
+      "name": "Snow",
+      "emoji": "⬜",
+      "category": "blocks"
+    },
+    {
+      "name": "Gold",
+      "emoji": "🟨",
+      "category": "resources"
+    },
+    {
+      "name": "Emerald",
+      "emoji": "🟩",
+      "category": "resources"
+    },
+    {
+      "name": "Fire",
+      "emoji": "🔥",
+      "category": "effects"
+    },
+    {
+      "name": "Ice",
+      "emoji": "❄️",
+      "category": "effects"
+    },
+    {
+      "name": "Water",
+      "emoji": "💧",
+      "category": "liquid"
+    },
+    {
+      "name": "Lightning",
+      "emoji": "⚡",
+      "category": "effects"
+    },
+    {
+      "name": "Horse",
+      "emoji": "🐎",
+      "category": "mobs"
+    },
+    {
+      "name": "Sheep",
+      "emoji": "🐑",
+      "category": "mobs"
+    },
+    {
+      "name": "Cow",
+      "emoji": "🐂",
+      "category": "mobs"
+    },
+    {
+      "name": "Pig",
+      "emoji": "🐖",
+      "category": "mobs"
+    },
+    {
+      "name": "Chicken",
+      "emoji": "🐔",
+      "category": "mobs"
+    },
+    {
+      "name": "Squid",
+      "emoji": "🐙",
+      "category": "mobs"
+    },
+    {
+      "name": "Zombie",
+      "emoji": "🧟",
+      "category": "hostile"
+    },
+    {
+      "name": "Skeleton",
+      "emoji": "💀",
+      "category": "hostile"
+    },
+    {
+      "name": "Ghost",
+      "emoji": "👻",
+      "category": "hostile"
+    },
+    {
+      "name": "Spider",
+      "emoji": "🕷️",
+      "category": "hostile"
+    },
+    {
+      "name": "Dragon",
+      "emoji": "🐉",
+      "category": "boss"
+    },
+    {
+      "name": "Oak Tree",
+      "emoji": "🌲",
+      "category": "nature"
+    },
+    {
+      "name": "Birch Tree",
+      "emoji": "🌳",
+      "category": "nature"
+    },
+    {
+      "name": "Jungle Tree",
+      "emoji": "🌴",
+      "category": "nature"
+    },
+    {
+      "name": "Mushroom",
+      "emoji": "🍄",
+      "category": "nature"
+    },
+    {
+      "name": "House",
+      "emoji": "🏠",
+      "category": "structures"
+    },
+    {
+      "name": "Castle",
+      "emoji": "🏰",
+      "category": "structures"
+    },
+    {
+      "name": "Book",
+      "emoji": "📖",
+      "category": "items"
+    }
+  ]
+}
