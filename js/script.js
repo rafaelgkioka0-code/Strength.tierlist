@@ -12,12 +12,65 @@ const minecraftItems = [
 
 let draggedItem = null;
 let draggedFrom = null;
+let isOwner = false;
+
+// Owner password (change this to your desired password)
+const OWNER_PASSWORD = 'owner123';
 
 // Initialize the tierlist
 function init() {
     loadItems();
     setupDragAndDrop();
     loadFromStorage();
+    checkOwnerStatus();
+}
+
+// Check if user is authenticated as owner
+function checkOwnerStatus() {
+    const ownerAuth = localStorage.getItem('ownerAuthenticated');
+    isOwner = ownerAuth === 'true';
+    updateRemovePlayerButtonVisibility();
+}
+
+// Update Remove Player button visibility
+function updateRemovePlayerButtonVisibility() {
+    const removeBtn = document.getElementById('removePlayerBtn');
+    if (removeBtn) {
+        removeBtn.style.display = isOwner ? 'inline-block' : 'none';
+    }
+}
+
+// Owner login function
+function ownerLogin() {
+    const password = prompt('Enter owner password:');
+    if (password === OWNER_PASSWORD) {
+        isOwner = true;
+        localStorage.setItem('ownerAuthenticated', 'true');
+        updateRemovePlayerButtonVisibility();
+        alert('Owner authenticated! Remove Player button is now visible.');
+    } else {
+        alert('Incorrect password!');
+        isOwner = false;
+        localStorage.removeItem('ownerAuthenticated');
+        updateRemovePlayerButtonVisibility();
+    }
+}
+
+// Owner logout function
+function ownerLogout() {
+    isOwner = false;
+    localStorage.removeItem('ownerAuthenticated');
+    updateRemovePlayerButtonVisibility();
+    alert('Logged out from owner mode.');
+}
+
+// Toggle owner mode
+function toggleOwnerMode() {
+    if (isOwner) {
+        ownerLogout();
+    } else {
+        ownerLogin();
+    }
 }
 
 // Load items into the pool
@@ -100,6 +153,51 @@ function handleDrop(e) {
         saveToStorage();
     }
 }
+
+// Add player function
+document.getElementById('addPlayerBtn')?.addEventListener('click', () => {
+    const playerEmoji = prompt('Enter player emoji or text:');
+    if (playerEmoji) {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'item';
+        itemEl.textContent = playerEmoji;
+        itemEl.draggable = true;
+        
+        itemEl.addEventListener('dragstart', handleDragStart);
+        itemEl.addEventListener('dragend', handleDragEnd);
+        
+        document.getElementById('itemsContainer').appendChild(itemEl);
+    }
+});
+
+// Remove player function (Owner only)
+document.getElementById('removePlayerBtn')?.addEventListener('click', () => {
+    if (!isOwner) {
+        alert('Only owner can remove players!');
+        return;
+    }
+    
+    const playerToRemove = prompt('Enter the player emoji/text to remove from all tiers:');
+    if (playerToRemove) {
+        let removed = false;
+        document.querySelectorAll('.tier-items').forEach(tier => {
+            const items = tier.querySelectorAll('.tier-item');
+            items.forEach(item => {
+                if (item.textContent.includes(playerToRemove)) {
+                    item.remove();
+                    removed = true;
+                }
+            });
+        });
+        
+        if (removed) {
+            saveToStorage();
+            alert(`Successfully removed "${playerToRemove}" from all tiers.`);
+        } else {
+            alert(`"${playerToRemove}" not found in any tier.`);
+        }
+    }
+});
 
 // Clear all players from all tiers
 function clearAllPlayers() {
