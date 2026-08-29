@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Tierlist Maker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Minecraft Tierlist Maker</h1>
+            <p>Rank your favorite Minecraft items, mobs, and more!</p>
+        </header>
+
+        <div class="controls">
+            <button id="resetBtn" class="btn">Reset Tierlist</button>
+            <button id="exportBtn" class="btn">Export Image</button>
+            <input type="text" id="tierlistTitle" placeholder="Enter tierlist title..." class="title-input">
+        </div>
+
+        <div class="tierlist">
+            <div class="tier">
+                <div class="tier-label">S</div>
+                <div class="tier-items" data-tier="S"></div>
+            </div>
+            <div class="tier">
+                <div class="tier-label">A</div>
+                <div class="tier-items" data-tier="A"></div>
+            </div>
+            <div class="tier">
+                <div class="tier-label">B</div>
+                <div class="tier-items" data-tier="B"></div>
+            </div>
+            <div class="tier">
+                <div class="tier-label">C</div>
+                <div class="tier-items" data-tier="C"></div>
+            </div>
+            <div class="tier">
+                <div class="tier-label">D</div>
+                <div class="tier-items" data-tier="D"></div>
+            </div>
+            <div class="tier">
+                <div class="tier-label">F</div>
+                <div class="tier-items" data-tier="F"></div>
+            </div>
+        </div>
+
+        <div class="items-pool">
+            <h2>Minecraft Items Pool</h2>
+            <div id="itemsContainer" class="items-grid"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
