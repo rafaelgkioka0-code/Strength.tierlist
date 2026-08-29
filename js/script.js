@@ -78,18 +78,67 @@ function loadItems() {
     const container = document.getElementById('itemsContainer');
     container.innerHTML = '';
     
+    // Load default items
     minecraftItems.forEach((item, index) => {
         const itemEl = document.createElement('div');
         itemEl.className = 'item';
         itemEl.textContent = item;
         itemEl.draggable = true;
         itemEl.id = `item-${index}`;
+        itemEl.dataset.isCustom = 'false';
         
         itemEl.addEventListener('dragstart', handleDragStart);
         itemEl.addEventListener('dragend', handleDragEnd);
         
         container.appendChild(itemEl);
     });
+    
+    // Load custom added items
+    const customItems = JSON.parse(localStorage.getItem('customItems')) || [];
+    customItems.forEach((item, index) => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'item custom-item';
+        itemEl.textContent = item;
+        itemEl.draggable = true;
+        itemEl.id = `custom-item-${index}`;
+        itemEl.dataset.isCustom = 'true';
+        
+        itemEl.addEventListener('dragstart', handleDragStart);
+        itemEl.addEventListener('dragend', handleDragEnd);
+        
+        // Add delete button for custom items
+        const deleteBtn = document.createElement('div');
+        deleteBtn.className = 'delete-custom-btn';
+        deleteBtn.innerHTML = '✕';
+        deleteBtn.onclick = (e) => {
+            e.stopPropagation();
+            removeCustomItem(item);
+        };
+        itemEl.appendChild(deleteBtn);
+        
+        container.appendChild(itemEl);
+    });
+}
+
+// Add custom item to pool
+function addCustomItem(item) {
+    const customItems = JSON.parse(localStorage.getItem('customItems')) || [];
+    if (!customItems.includes(item)) {
+        customItems.push(item);
+        localStorage.setItem('customItems', JSON.stringify(customItems));
+        loadItems(); // Reload items to display the new one
+    }
+}
+
+// Remove custom item from pool
+function removeCustomItem(item) {
+    const customItems = JSON.parse(localStorage.getItem('customItems')) || [];
+    const index = customItems.indexOf(item);
+    if (index > -1) {
+        customItems.splice(index, 1);
+        localStorage.setItem('customItems', JSON.stringify(customItems));
+        loadItems(); // Reload items
+    }
 }
 
 // Setup drag and drop for tier items
@@ -118,7 +167,7 @@ function handleDragEnd(e) {
 function handleDragOver(e) {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
-    this.style.backgroundColor = 'rgba(102, 126, 234, 0.2)';
+    this.style.backgroundColor = 'rgba(204, 0, 0, 0.2)';
 }
 
 function handleDragLeave(e) {
@@ -157,16 +206,8 @@ function handleDrop(e) {
 // Add player function
 document.getElementById('addPlayerBtn')?.addEventListener('click', () => {
     const playerEmoji = prompt('Enter player emoji or text:');
-    if (playerEmoji) {
-        const itemEl = document.createElement('div');
-        itemEl.className = 'item';
-        itemEl.textContent = playerEmoji;
-        itemEl.draggable = true;
-        
-        itemEl.addEventListener('dragstart', handleDragStart);
-        itemEl.addEventListener('dragend', handleDragEnd);
-        
-        document.getElementById('itemsContainer').appendChild(itemEl);
+    if (playerEmoji && playerEmoji.trim() !== '') {
+        addCustomItem(playerEmoji.trim());
     }
 });
 
@@ -229,13 +270,13 @@ document.getElementById('exportBtn').addEventListener('click', () => {
     canvas.height = 600;
     
     // Background
-    ctx.fillStyle = '#f0f0f0';
+    ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
     // Title
-    ctx.fillStyle = '#667eea';
+    ctx.fillStyle = '#ff3333';
     ctx.font = 'bold 24px Arial';
-    const title = document.getElementById('tierlistTitle').value || 'My Minecraft Tierlist';
+    const title = document.getElementById('tierlistTitle').value || 'My Strength Tierlist';
     ctx.fillText(title, 20, 40);
     
     // Draw tiers
@@ -247,14 +288,14 @@ document.getElementById('exportBtn').addEventListener('click', () => {
         const items = tier.querySelectorAll('.item, .tier-item');
         
         // Draw tier label
-        ctx.fillStyle = '#667eea';
+        ctx.fillStyle = '#ff3333';
         ctx.font = 'bold 20px Arial';
         ctx.fillText(tierLabels[index], 20, y + 30);
         
         // Draw tier items (simplified)
         let x = 80;
-        ctx.fillStyle = '#fff';
-        ctx.strokeStyle = '#667eea';
+        ctx.fillStyle = '#cc0000';
+        ctx.strokeStyle = '#ff3333';
         ctx.lineWidth = 2;
         
         items.forEach(() => {
