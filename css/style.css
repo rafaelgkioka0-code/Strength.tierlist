@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #000000 0%, #0066ff 100%);
     min-height: 100vh;
     padding: 20px;
     color: #333;
@@ -15,27 +15,28 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: white;
+    background: rgba(20, 20, 30, 0.95);
     border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 102, 255, 0.5);
     padding: 30px;
 }
 
 header {
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid #0066ff;
     padding-bottom: 20px;
 }
 
 header h1 {
     font-size: 2.5em;
-    color: #667eea;
+    color: #0066ff;
     margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 102, 255, 0.8);
 }
 
 header p {
-    color: #666;
+    color: #aaa;
     font-size: 1.1em;
 }
 
@@ -49,40 +50,52 @@ header p {
 
 .btn {
     padding: 12px 25px;
-    background: #667eea;
+    background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
     color: white;
-    border: none;
+    border: 2px solid #0099ff;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
 }
 
 .btn:hover {
-    background: #764ba2;
+    background: linear-gradient(135deg, #0099ff 0%, #0066ff 100%);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.8);
+    transform: translateY(-2px);
 }
 
 .title-input {
     padding: 12px 15px;
-    border: 2px solid #667eea;
+    border: 2px solid #0066ff;
     border-radius: 5px;
     font-size: 1em;
     width: 300px;
     max-width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+}
+
+.title-input::placeholder {
+    color: #888;
 }
 
 .tierlist {
     margin-bottom: 40px;
-    border: 2px solid #ddd;
+    border: 2px solid #0066ff;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
 }
 
 .tier {
     display: flex;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #0066ff;
     min-height: 100px;
+    background: rgba(0, 30, 60, 0.6);
 }
 
 .tier:last-child {
@@ -96,13 +109,14 @@ header p {
     justify-content: center;
     font-size: 2em;
     font-weight: bold;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #000000 0%, #0066ff 100%);
+    color: #0099ff;
     min-width: 80px;
+    text-shadow: 0 0 5px rgba(0, 102, 255, 0.8);
 }
 
 .tier-label:nth-parent(1) {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #000000 0%, #0066ff 100%);
 }
 
 .tier-items {
@@ -112,29 +126,31 @@ header p {
     align-content: flex-start;
     gap: 5px;
     padding: 10px;
-    background: #f9f9f9;
+    background: rgba(0, 20, 40, 0.4);
     min-height: 100px;
 }
 
 .tier-item {
     width: 80px;
     height: 80px;
-    background: white;
-    border: 2px solid #ddd;
+    background: rgba(30, 30, 50, 0.8);
+    border: 2px solid #0066ff;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: grab;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
     font-size: 2em;
     user-select: none;
     position: relative;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
 }
 
 .tier-item:hover {
     transform: scale(1.05);
-    border-color: #667eea;
+    border-color: #0099ff;
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
 }
 
 .tier-item.dragging {
@@ -146,7 +162,7 @@ header p {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: #f5576c;
+    background: #ff0055;
     color: white;
     width: 24px;
     height: 24px;
@@ -159,6 +175,7 @@ header p {
     font-weight: bold;
     opacity: 0;
     transition: opacity 0.2s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
 }
 
 .tier-item:hover .close-btn {
@@ -168,12 +185,13 @@ header p {
 .items-pool {
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid #0066ff;
 }
 
 .items-pool h2 {
     margin-bottom: 20px;
-    color: #667eea;
+    color: #0099ff;
+    text-shadow: 0 0 10px rgba(0, 102, 255, 0.6);
 }
 
 .items-grid {
@@ -185,8 +203,8 @@ header p {
 .item {
     width: 100%;
     aspect-ratio: 1;
-    background: white;
-    border: 2px solid #667eea;
+    background: rgba(30, 30, 50, 0.8);
+    border: 2px solid #0066ff;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -194,11 +212,13 @@ header p {
     cursor: grab;
     font-size: 2.5em;
     transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
 }
 
 .item:hover {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.7);
+    border-color: #0099ff;
 }
 
 .item.dragging {
